@@ -2,7 +2,7 @@
 #  Maintenance / Housekeeping
 # =============================================================================
 
-.PHONY: fcg pod-restart clear_gradle
+.PHONY: fcg pod-restart clear_gradle android-setup
 
 fcg: ## Full clean → get deps → format (shorthand refresh)
 	@$(MAKE) clean
@@ -20,3 +20,6 @@ pod-restart: ## Wipe & reinstall CocoaPods, then refresh project
 
 clear_gradle: ## Delete Gradle caches (~/.gradle/{caches,wrapper,daemon})
 	@rm -rf $(GRADLE_CACHE_DIRS)
+
+android-setup: ## Setup Android signing (key.properties + keystore)
+	@bash tools/script/android-settings.sh
