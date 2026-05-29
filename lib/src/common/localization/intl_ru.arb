@@ -1,0 +1,7 @@
+{
+  "@@locale": "ru",
+  "appTitle": "Initial Project",
+  "@appTitle": {
+    "description": "The title of the application"
+  }
+}
